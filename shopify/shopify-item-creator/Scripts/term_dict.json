@@ -1,0 +1,655 @@
+{
+    "colors": {
+        "BLACK": [
+            "BLACK",
+            "NEGRO"
+        ],
+        "BLUE": [
+            "LIGHT BLUE",
+            "DEEP BLUE",
+            "NAVY",
+            "NAVY BLUE",
+            "AZUL",
+            "DARK BLUE",
+            "TEAL",
+            "BLUE"
+        ],
+        "BEIGE": [
+            "BIEGE",
+            "TAN",
+            "CREAM",
+            "BEIGE",
+            "LIGHT BEIGE",
+            "DARK BEIGE"
+        ],
+        "GRAY": [
+            "DARK GRAY",
+            "GREY",
+            "DARK GREY",
+            "MEDIUM GREY",
+            "LIGHT GRAY",
+            "GRAY-LIGHT",
+            "LIGHT GREY",
+            "GRAY",
+            "GRAY-DARK",
+            "METALIC"
+        ],
+        "GREEN": [
+            "LIGHT GREEN",
+            "TEAL",
+            "GREEN",
+            "HUNTER GREEN"
+        ],
+        "ORANGE": [
+            "ORANGE"
+        ],
+        "PURPLE": [
+            "PURPLE",
+            "DARK PURPLE"
+        ],
+        "RED": [
+            "RED"
+        ],
+        "YELLOW": [
+            "YELLOW"
+        ],
+        "WHITE": [
+            "WHITE-WARM",
+            "OFF-WHITE",
+            "CREAM",
+            "CREAMY WHITE",
+            "ANTIQUE WHITE",
+            "WHITE",
+            "WHITE-COOL",
+            "IVORY"
+        ],
+        "GOLD": [
+            "GOLD"
+        ],
+        "SILVER": [
+            "SILVER"
+        ],
+        "COPPER": [
+            "COPPER"
+        ],
+        "BRONZE": [
+            "BRONZE"
+        ],
+        "BROWN": [
+            "DARK BROWN",
+            "BROWN",
+            "LIGHT BROWN"
+        ],
+        "BLACK & WHITE": [
+            "BLACK&WHITE",
+            "BLACK & WHITE",
+            "BLACK AND WHITE"
+        ],
+        "MULTICOLOR": [
+            "MULTI",
+            "MULTI-COLOR",
+            "MULTICOLOR"
+        ],
+        "PINK": [
+            "PINK"
+        ]
+    },
+    "finishes": {
+        "GLOSSY": [
+            "GLOSS",
+            "GLOSSY",
+            "BRIGHT"
+        ],
+        "MATTE": [
+            "MATTE",
+            "MATT"
+        ],
+        "HONED": [
+            "HONED"
+        ],
+        "POLISHED": [
+            "POLISH",
+            "POLISHED",
+            "SEMI POLISHED"
+        ],
+        "SEMI GLOSS": [
+            "LOW GLOSS",
+            "SEMI GLOSS"
+        ],
+        "NATURAL": [
+            "NATURAL",
+            "UNFINISHED",
+            "RAW",
+            "DISTRESSED"
+        ],
+        "SPLITFACE": [
+            "SPLIT FACE",
+            "SPLITFACE"
+        ],
+        "TUMBLED": [
+            "TUMBLED"
+        ],
+        "SATIN": [
+            "SATIN"
+        ],
+        "CHISELED": [
+            "CHISELED"
+        ],
+        "FLAMED": [
+            "FLAMED"
+        ],
+        "BUSH HAMMERED": [
+            "BUSH HAMMERED"
+        ],
+        "BRUSHED": [
+            "BRUSHED"
+        ],
+        "GAUGED": [
+            "GAUGED"
+        ],
+        "FILLED": [
+            "FILLED"
+        ],
+        "FLOW": [
+            "FLOW"
+        ],
+        "METALLIC": [
+            "METALLIC"
+        ],
+        "GRIP": [
+            "GRIP"
+        ],
+        "TEXTURE": [
+            "TEXTURE"
+        ]
+    },
+    "residential_applications": {
+        "WALL": [
+            "WALL",
+            "R_WALL",
+            "R-WALL"
+        ],
+        "FLOOR": [
+            "FLOOR",
+            "R_FLOOR",
+            "R-FLOOR"
+        ],
+        "BACKSPLASH": [
+            "BACKSPLASH",
+            "R_BACKSPLASH",
+            "R-BACKSPLASH"
+        ],
+        "BATHROOM": [
+            "BATHROOM",
+            "R_BATHROOM",
+            "R-BATHROOM"
+        ],
+        "SHOWER": [
+            "SHOWER",
+            "R_SHOWER",
+            "R-SHOWER"
+        ],
+        "OUTDOOR": [
+            "OUTDOOR",
+            "R_OUTDOOR",
+            "R-OUTDOOR"
+        ],
+        "POOL": [
+            "POOL",
+            "R_POOL",
+            "R-POOL"
+        ],
+        "KITCHEN": [
+            "KITCHEN",
+            "R_KITCHEN",
+            "R-KITCHEN"
+        ],
+        "COUNTERTOP": [
+            "COUNTERTOPS",
+            "R_COUNTERTOP",
+            "R-COUNTERTOP",
+            "COUNTERTOP"
+        ],
+        "FIREPLACE": [
+            "FIREPLACE",
+            "R_FIREPLACE",
+            "R-FIREPLACE"
+        ]
+    },
+    "commercial_applications": {
+        "WALL": [
+            "C_WALL",
+            "C-WALL"
+        ],
+        "FLOOR": [
+            "COMMERCIAL_FLOOR",
+            "COMMERCIAL_F",
+            "C_FLOOR",
+            "COMMERCIAL-FLOOR",
+            "COMMERCIAL-F",
+            "C-FLOOR"
+        ],
+        "BATHROOM": [
+            "C_SHOWER",
+            "C_BATH",
+            "C-SHOWER",
+            "C-BATH"
+        ],
+        "OUTDOOR": [
+            "C_OUTDOOR",
+            "C-OUTDOOR"
+        ],
+        "COUNTERTOP": [
+            "C_COUNTERTOP",
+            "C-COUNTERTOP"
+        ],
+        "POOL": [
+            "C_POOL",
+            "C-POOL"
+        ]
+    },
+    "materials": {
+        "PORCELAIN": [
+            "GLAZED PORCELAIN",
+            "PORCELIAN",
+            "GLAZED COLOR BODY PORCELAIN",
+            "PORCELAIN BODY",
+            "PORCELAIN"
+        ],
+        "CERAMIC": [
+            "CERAMIC",
+            "UNGLAZED CERAMIC",
+            "GLAZED CERAMIC"
+        ],
+        "GLASS": [
+            "MIRROR",
+            "RECYCLED GLASS",
+            "GLASS"
+        ],
+        "QUARTZ": [
+            "QUARTZ"
+        ],
+        "TRAVERTINE": [
+            "TRAVERTINE"
+        ],
+        "MARBLE": [
+            "CALCATTA",
+            "BARDIGLIO",
+            "MARBLE",
+            "NERO MARQUINA",
+            "SHELL",
+            "MONGOLIA BLACK",
+            "CARRARA",
+            "ARISTON",
+            "THASSOS",
+            "ORIENTAL WHITE",
+            "VOLAKAS",
+            "CALACATTA",
+            "CARRARA MARBLE"
+        ],
+        "SANDSTONE": [
+            "SANDSTONE"
+        ],
+        "GRANITE": [
+            "GRANITE"
+        ],
+        "QUARTZITE": [
+            "QUARTZITE"
+        ],
+        "SLATE": [
+            "SLATE"
+        ],
+        "LIMESTONE": [
+            "LIMESTONE"
+        ],
+        "BASALT": [
+            "BASALT"
+        ],
+        "TERRACOTTA": [
+            "CLAY",
+            "TERRACOTTA"
+        ],
+        "VINYL": [
+            "LPC",
+            "VINYL"
+        ],
+        "METAL": [
+            "METAL",
+            "BRASS",
+            "STAINLESS STEEL"
+        ],
+        "BRICK": [
+            "BRICK"
+        ],
+        "STONE": [
+            "STONEWARE",
+            "STONE"
+        ],
+        "WOOD": [
+            "WOOD",
+            "HARDWOOD",
+            "HARD WOOD",
+            "ENGINEER WOOD",
+            "ENGINEERING WOOD",
+            "ENGINEERED WOOD"
+        ],
+        "TERRAZZO": [
+            "TERRAZZO"
+        ],
+        "QUARRY": [
+            "QUARRY"
+        ]
+    },
+    "styles": {
+        "MODERN": [
+            "MODERN"
+        ],
+        "CONTEMPORARY": [
+            "CONTEMPORARY"
+        ],
+        "TRADITIONAL": [
+            "TRADITIONAL"
+        ],
+        "RUSTIC": [
+            "RUSTIC"
+        ],
+        "FARMHOUSE": [
+            "FARMHOUSE"
+        ],
+        "INDUSTRIAL": [
+            "INDUSTRIAL"
+        ],
+        "MEDITERRANEAN": [
+            "MEDITERRANEAN"
+        ],
+        "MID-CENTURY MODERN": [
+            "MID-CENTURY MODERN"
+        ],
+        "BOHEMIAN": [
+            "BOHEMIAN"
+        ],
+        "COASTAL": [
+            "COASTAL"
+        ],
+        "SCANDINAVIAN": [
+            "SCANDINAVIAN"
+        ],
+        "ENCAUSTIC": [
+            "ENCAUSTIC"
+        ],
+        "ART DECO": [
+            "ART DECO"
+        ],
+        "MINIMALIST": [
+            "MINIMALIST"
+        ],
+        "TRANSITIONAL": [
+            "TRANSITIONAL"
+        ],
+        "ECLECTIC": [
+            "ECLECTIC"
+        ]
+    },
+    "piece_type": {
+        "SMALL FORMAT TILE": [
+            "SMALL FORMAT",
+            "SUBWAY TILE",
+            "SMALL FORMAT TILE"
+        ],
+        "LARGE FORMAT TILE": [
+            "LARGE FORMAT FIELD TILE",
+            "LARGE FORMAT DECORATIVE",
+            "LARGE FORMAT TILE",
+            "LARGE FORMAT"
+        ],
+        "MOSAIC": [
+            "MOSAIC"
+        ],
+        "PANEL": [
+            "LEDGER PANEL CORNER",
+            "LEDGER PANEL",
+            "MINI PANEL CORNER",
+            "MINI PANEL",
+            "MINI LEDGER PANEL",
+            "LEDGER CORNER",
+            "MINI STACKED PANEL",
+            "STACKED STONE PANEL",
+            "VENEER"
+        ],
+        "PLANK": [
+            "PLANK",
+            "LUXURY PLANK",
+            "RIGID CORE",
+            "DRYBACK",
+            "LUXURY VINYL",
+            "HYBRID RIGID CORE"
+        ],
+        "TRIM": [
+            "SURFACE TRIM",
+            "QUARTER ROUND",
+            "COVE BASE",
+            "ROUND STAIR NOSE",
+            "CORNICE",
+            "T-MOLDING",
+            "MODERN LINER",
+            "REDUCER",
+            "STAIR NOSE",
+            "MODERN CHAIR RAIL",
+            "BULLNOSE CORNER",
+            "TRIM",
+            "THRESHOLD",
+            "BEAD",
+            "STANDARD LINER",
+            "FLUSH STAIR NOSE",
+            "ROPE LINER",
+            "CLASSIC CHAIR RAIL",
+            "LINER",
+            "BEAK",
+            "JOLLY",
+            "MINI LINER",
+            "PENCIL LINER",
+            "GRAND CHAIR RAIL",
+            "CROWN MOLDING",
+            "PENCIL",
+            "CHAIR RAIL",
+            "BULLNOSE",
+            "SURFACE BULLNOSE",
+            "BASEBOARD",
+            "DOT",
+            "MITER EDGE JOLLY",
+            "STANDARD CHAIRRAIL",
+            "DEMI-BULLNOSE"
+        ],
+        "COPING": [
+            "EASED COPING",
+            "COPING",
+            "POOL COPING"
+        ],
+        "PAVER": [
+            "PAVER",
+            "MESH PAVER"
+        ]
+    },
+    "looks": {
+        "MARBLE": [
+            "MARBLE LOOK",
+            "MARBLE"
+        ],
+        "STONE": [
+            "STONE LOOK",
+            "STONE"
+        ],
+        "WOOD": [
+            "WOOD",
+            "WOOD LOOK"
+        ],
+        "TERRACOTTA": [
+            "TERRACOTTA",
+            "TERRACOTTA LOOK"
+        ],
+        "TRAVERTINE": [
+            "TRAVERTINE"
+        ],
+        "TERRAZZO": [
+            "TERRAZZO"
+        ],
+        "SUBWAY": [
+            "SUBWAY LOOK",
+            "SUBWAY"
+        ],
+        "DECORATIVE": [
+            "DECORATIVE",
+            "DECORATIVE LOOK"
+        ],
+        "ENCAUSTIC": [
+            "ENCAUSTIC LOOK",
+            "ENCAUSTIC"
+        ],
+        "CONCRETE": [
+            "CONCRETE LOOK",
+            "CONCRETE"
+        ],
+        "HANDMADE": [
+            "HANDMADE LOOK",
+            "HANDMADE"
+        ],
+        "METALLIC": [
+            "METAL",
+            "METAL LOOK"
+        ],
+        "PEBBLE": [
+            "PEBBLE"
+        ],
+        "FABRIC": [
+            "LINEN LOOK"
+        ],
+        "3D TEXTURED": [
+            "3D TEXTURED"
+        ],
+        "FLUTED": [
+            "FLUTED"
+        ],
+        "BRICK": [
+            "BRICK"
+        ],
+        "GLASS": [
+            "GLASS",
+            "GLASS LOOK"
+        ],
+        "ZELLIGE": [
+            "ZELLIGE",
+            "ZELLIGE LOOK"
+        ],
+        "SOLID": [
+            "SOLID"
+        ]
+    },
+    "mosaic_shapes": {
+        "SQUARE": [
+            "SQUARE",
+            "OFFSET SQUARE"
+        ],
+        "HEXAGON": [
+            "HEXAGON",
+            "HALF HEXAGON",
+            "ELONGATED HEXAGON"
+        ],
+        "PENNY ROUND": [
+            "PENNY ROUND",
+            "OVAL"
+        ],
+        "CHEVRON": [
+            "CHEVRON",
+            "MINI CHEVRON",
+            "DASH"
+        ],
+        "HERRINGBONE": [
+            "HERRINGBONE"
+        ],
+        "OCTAGON": [
+            "OCTAGON & DOT",
+            "ELONGATED OCTAGON"
+        ],
+        "BASKETWEAVE": [
+            "BASKETWEAVE",
+            "PINWHEEL"
+        ],
+        "PICKET": [
+            "PICKET"
+        ],
+        "ARABESQUE": [
+            "ARABESQUE",
+            "MARRAKECH",
+            "FAN",
+            "DRAGONSCALE"
+        ],
+        "BRICK": [
+            "BRICK"
+        ],
+        "LINEAR": [
+            "LINEAR",
+            "STACKED",
+            "RANDOM STACK",
+            "MINI STICKS",
+            "FINGER TILE"
+        ],
+        "PEBBLE": [
+            "PEBBLE",
+            "BUBBLES",
+            "SLIVERS"
+        ],
+        "FLOWER": [
+            "FLOWER",
+            "FLORAL"
+        ],
+        "OTHER": [
+            "FISH SCALE",
+            "TRACE",
+            "ZIPPER",
+            "MIXED SHAPE",
+            "GEOMETRIC",
+            "3D / DIMENSIONAL",
+            "WATERJET",
+            "SPECIALITY",
+            "WEDGE",
+            "SYMMETRY",
+            "LIMELIGHT",
+            "BRAVADO",
+            "JOLLIE",
+            "ADLEY",
+            "APEX",
+            "AVIGNON",
+            "INVERTED BEVEL",
+            "INTERLUDE",
+            "QUARTERFORIL",
+            "STARLITE",
+            "DOTTY",
+            "LYNX",
+            "GRIDWORK",
+            "MAZE",
+            "BANNISTER",
+            "CAPSULE",
+            "SWIVEL",
+            "FANTASY",
+            "TRIFECTA",
+            "REVERSE",
+            "HINGE",
+            "SPRING",
+            "DIAMOND",
+            "CROSSHATCH",
+            "TRAPEZOID",
+            "3D BREAD",
+            "DOGBONE",
+            "STANZA",
+            "RHOMBOID",
+            "3D CUBE",
+            "TRIANGLE",
+            "KALEIDOSCOPE",
+            "CROSS",
+            "TRIPLEWEAVE",
+            "MINI VERSAILLES",
+            "BAMBOO",
+            "SPLIT FACE"
+        ]
+    }
+}
