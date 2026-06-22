@@ -5,8 +5,10 @@ import os
 import re
 import ETlib as et
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 '''
-This script will do two things. It will make the add item import file to import straight into NetSuite and the UOM import file that is needed before 
+This script will do two things. It will make the add item import file to import straight into NetSuite and the UOM import file that is needed before
 the add item file. It requires only the mpl file be updated and uploaded on to the FTP server.
 
 '''
@@ -189,7 +191,7 @@ dtype_dict = {col: str for col in df.columns}
 # Fill NaN values with empty strings using the specified data types
 add_item_df = df.fillna('', inplace=False).astype(dtype_dict)
 
-output_folder = 'Real Product Add Item Files'
+output_folder = os.path.join(SCRIPT_DIR, 'Real Product Add Item Files')
 os.makedirs(output_folder, exist_ok=True)
 
 output_csv_file = os.path.join(output_folder, ven_code + " ADD ITEM.csv")
@@ -304,7 +306,7 @@ uom_df = uom_df.sort_values(by=['Item(Type Name)', 'Base Unit'], ascending=[True
 # print(uom_df.head())
 
 # Create a folder named 'Add Item Output'
-output_folder_2 = 'Real Product UOM Files'
+output_folder_2 = os.path.join(SCRIPT_DIR, 'Real Product UOM Files')
 os.makedirs(output_folder_2, exist_ok=True)
 
 # Define the output file path within the folder
@@ -319,7 +321,7 @@ sync_mpl = pd.DataFrame({
     'External Id': mpl['V SKU']
 })
 
-output_folder_3 = 'V Code and E code Link'
+output_folder_3 = os.path.join(SCRIPT_DIR, 'V Code and E code Link')
 os.makedirs(output_folder_3, exist_ok=True)
 output_csv_file_mpl = os.path.join(output_folder_3, "{} V code sync to E code.csv".format(ven_code))
 sync_mpl.to_csv(output_csv_file_mpl, encoding="utf-8", index=False)

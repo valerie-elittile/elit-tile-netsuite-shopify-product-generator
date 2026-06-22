@@ -5,20 +5,22 @@ import os
 import re
 import ETlib as et
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # ftp = et.ftp_login()
 
 active_tile_vendors = et.get_tile_vendors()
 
-output_folder_cut = 'Sample Product Add Item Files'
+output_folder_cut = os.path.join(SCRIPT_DIR, 'Sample Product Add Item Files')
 os.makedirs(output_folder_cut, exist_ok=True)
 
-output_folder_cut_uom = 'Sample Product UOM Files'
+output_folder_cut_uom = os.path.join(SCRIPT_DIR, 'Sample Product UOM Files')
 os.makedirs(output_folder_cut_uom, exist_ok=True)
 
-output_folder_v = 'V Code Sample Product Add Item Files'
+output_folder_v = os.path.join(SCRIPT_DIR, 'V Code Sample Product Add Item Files')
 os.makedirs(output_folder_v, exist_ok=True)
 
-output_folder_v_uom = 'V Code Sample Product UOM Files'
+output_folder_v_uom = os.path.join(SCRIPT_DIR, 'V Code Sample Product UOM Files')
 os.makedirs(output_folder_v_uom, exist_ok=True)
 
 ven_code = input('Enter vendor code(not case sensitive): ').upper()

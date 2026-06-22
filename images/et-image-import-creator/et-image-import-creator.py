@@ -5,13 +5,13 @@ import os
 import re
 import ETlib as et
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 active_tile_vendors = et.tile_vendor_mapping
 active_tool_vendors = et.tool_vendor_mapping
 
-output_folder = 'out'
-
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
+output_folder = os.path.join(SCRIPT_DIR, 'out')
+os.makedirs(output_folder, exist_ok=True)
 
 #----------------------------USER SELECTION-------------------------------------#
 print("\n" + "="*60)

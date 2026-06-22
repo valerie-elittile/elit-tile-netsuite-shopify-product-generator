@@ -1,8 +1,10 @@
 import subprocess
 import os
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def run_script(script_name):
-    script_path = os.path.join('Scripts', script_name)
+    script_path = os.path.join(SCRIPT_DIR, 'Scripts', script_name)
     try:
         subprocess.run(['python', script_path], check=True)
     except subprocess.CalledProcessError as e:

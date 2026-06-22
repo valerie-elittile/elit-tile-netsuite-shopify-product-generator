@@ -5,6 +5,8 @@ import requests
 from urllib.parse import urlparse
 import pandas as pd
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Function to extract URLs from QR codes in images
 def extract_urls_from_qr(directory):
     urls = []
@@ -91,7 +93,7 @@ def process_folders(qr_directory, process_all=True, specific_subfolder=None):
     # Save the results to an Excel file
     if all_results:
         df = pd.DataFrame(all_results)
-        output_file = 'qr_code_results.xlsx'
+        output_file = os.path.join(SCRIPT_DIR, 'qr_code_results.xlsx')
         df.to_excel(output_file, index=False)
         print(f"\nResults saved to {output_file} in the current directory.")
         print(f"Total 404 Errors Found: {total_404_count}")
@@ -99,7 +101,7 @@ def process_folders(qr_directory, process_all=True, specific_subfolder=None):
         print("\nNo URLs were found.")
 
 # Main directory containing all subdirectories
-qr_directory = r'C:\Users\YArcos\Desktop\Current Working Scripts\qr code generator\qrs'
+qr_directory = os.path.join(SCRIPT_DIR, 'qrs')
 
 # Get user choice for processing
 user_choice = input("Do you want to process all folders (1) or a specific folder (2)? ").strip().upper()

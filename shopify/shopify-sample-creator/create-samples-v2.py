@@ -5,14 +5,16 @@ import os
 import re
 import ETlib as et
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 ftp = et.ftp_login()
 
 active_tile_vendors = et.get_tile_vendors()
 
-output_folder_cut = 'cut samples out'
+output_folder_cut = os.path.join(SCRIPT_DIR, 'cut samples out')
 os.makedirs(output_folder_cut, exist_ok=True)
 
-output_folder_real_mapping = 'real product mapping'
+output_folder_real_mapping = os.path.join(SCRIPT_DIR, 'real product mapping')
 os.makedirs(output_folder_real_mapping, exist_ok=True)
 
 ven_code = input('Enter vendor code(not case sensitive): ').upper()

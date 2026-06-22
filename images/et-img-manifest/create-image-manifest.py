@@ -5,6 +5,8 @@ import os
 import re
 import ETlib as et
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def pwd(ftp):
     print(f"Changing directory to {ftp.pwd()}")
 
@@ -110,7 +112,9 @@ prod_df = prod_df[prod_df['Top Row'].notna()].copy()
 prod_df.set_index('Variant SKU', inplace=True)
 
 # Create an ExcelWriter object
-full_out = pd.ExcelWriter('./out/full-manifest.xlsx', engine='xlsxwriter')
+out_dir = os.path.join(SCRIPT_DIR, 'out')
+os.makedirs(out_dir, exist_ok=True)
+full_out = pd.ExcelWriter(os.path.join(out_dir, 'full-manifest.xlsx'), engine='xlsxwriter')
 
 try:
     #----------------------------TILES-------------------------------------#
@@ -162,7 +166,7 @@ try:
 
         vendor_dfs[ven] = vendor_dfs[ven].reindex(columns=column_order)
 
-        vendor_dfs[ven].to_excel(f"./out/{ven}-full-image-manifest.xlsx")
+        vendor_dfs[ven].to_excel(os.path.join(out_dir, f"{ven}-full-image-manifest.xlsx"))
 
         # Write to the combined Excel file
         vendor_dfs[ven].to_excel(full_out, sheet_name=ven)
@@ -218,7 +222,7 @@ try:
 
         vendor_dfs[ven] = vendor_dfs[ven].reindex(columns=column_order)
 
-        vendor_dfs[ven].to_excel(f"./out/{ven}-full-image-manifest.xlsx")
+        vendor_dfs[ven].to_excel(os.path.join(out_dir, f"{ven}-full-image-manifest.xlsx"))
 
         # Write to the combined Excel file
         vendor_dfs[ven].to_excel(full_out, sheet_name=ven)

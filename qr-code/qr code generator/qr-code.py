@@ -6,6 +6,8 @@ import re
 import ETlib as et
 import qrcode
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 def generate_small_qr_code(data, file_name):
     qr = qrcode.QRCode(
         version=1,  # Choose the QR code version (1 to 40, higher values for larger codes)
@@ -17,10 +19,10 @@ def generate_small_qr_code(data, file_name):
     qr.make(fit=True)
 
     # Generate QR code image file
-    qr.make_image(fill_color="black", back_color="white").save(".\\qrs\\"+file_name)
+    qr.make_image(fill_color="black", back_color="white").save(os.path.join(SCRIPT_DIR, "qrs", file_name))
 
-if not os.path.exists('qrs'):
-    os.mkdir('qrs')
+qrs_dir = os.path.join(SCRIPT_DIR, 'qrs')
+os.makedirs(qrs_dir, exist_ok=True)
 
 
 #------------------------------------------Code starts here---------------------------------------------------------------#
@@ -48,8 +50,8 @@ mpl_for_sample = mpl_for_sample.reset_index(drop=True)
 
 for i, r in mpl_for_sample.iterrows():
 
-    if not os.path.exists(f'qrs/{ven_code}'):
-        os.mkdir(f'qrs/{ven_code}')
+    ven_qrs_dir = os.path.join(qrs_dir, ven_code)
+    os.makedirs(ven_qrs_dir, exist_ok=True)
 
     sku = r['E SKU']
     handle = r['HANDLE']
