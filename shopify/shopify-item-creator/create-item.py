@@ -19,7 +19,7 @@ def main():
     if choice == '1':
         run_script('create-tile-v4.py')
     elif choice == '2':
-        run_script('create-tool.py')
+        run_script('create-tool-v2.py')
     else:
         print("Invalid choice. Please enter 1 or 2.")
 
