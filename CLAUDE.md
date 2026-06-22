@@ -39,6 +39,7 @@ There is no `requirements.txt` or `pyproject.toml` — install packages manually
 `ETlib.py` is gitignored and must exist at the repo root. Every script imports it as `import ETlib as et`. It provides:
 - **FTP access**: `et.ftp_login()` connects to the tiledata.net FTP server hosting product images and data files
 - **MPL data loaders**: `et.get_tile_mpl_itshare()`, `et.get_tool_mpl_itshare()`, `et.get_tile_mpl_ftpserver(ftp)`, `et.get_tool_mpl_by_vendor_2(ven_code)` — reads the Master Price List from IT Share (network/SharePoint) or FTP
+Location of ETlib: C:\Users\VVillafana\AppData\Local\Programs\Python\Python314\Lib\site-packages\ETlib.py
 - **Vendor mappings**: `et.get_tile_vendors()`, `et.get_tool_vendors()`, `et.get_all_vendors()`, `et.get_retail_vendor_mapping()`, `et.get_tool_brand_mapping()`
 - **UOM/unit mappings**: `et.get_uom_mapping()`, `et.get_sell_unit_mapping()`, `et.get_plural_uom_mapping()`, `et.get_unit_plural_mapping()`, `et.get_uom_mapping_abb()`
 - **Classification**: `et.get_class_mapping()`, `et.get_classification_table_itshare()`
