@@ -8,7 +8,7 @@ ROOT = Path(__file__).parent
 SCRIPTS = {
     "shopify-tile":     ROOT / "shopify/shopify-item-creator/Scripts/create-tile-v4.py",
     "shopify-tool":     ROOT / "shopify/shopify-item-creator/Scripts/create-tool-v2.py",
-    "shopify-samples":  ROOT / "shopify/shopify-sample-creator/create-samples v2.py",
+    "shopify-samples":  ROOT / "shopify/shopify-sample-creator/create-samples-v2.py",
     "netsuite-real":    ROOT / "netsuite/netsuite-item-creator/real_prod.py",
     "netsuite-samples": ROOT / "netsuite/netsuite-item-creator/sample_prod.py",
     "images-manifest":  ROOT / "images/et-img-manifest/create-image-manifest.py",
