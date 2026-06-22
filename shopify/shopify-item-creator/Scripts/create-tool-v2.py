@@ -8,7 +8,7 @@ import ETlib as et
 #-------------------------Functions--------------------------------#
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-folder_path_filtered_data = os.path.join(script_dir)
+parent_dir = os.path.dirname(script_dir)
 
 def transform_series(series):
     if pd.isna(series):
@@ -156,8 +156,11 @@ def build_import_df(df, Vendor_id, Vendor_Mapping, Brand_Mapping):
 
 #------------- Begin Script -----------------------------------------------#
 
-output_import_folder = os.path.join(script_dir, 'Import Files')
+output_import_folder = os.path.join(parent_dir, 'Import Files')
 os.makedirs(output_import_folder, exist_ok=True)
+
+output_filtered_folder = os.path.join(parent_dir, 'Filtered Data')
+os.makedirs(output_filtered_folder, exist_ok=True)
 
 Vendor_Mapping = et.get_tool_vendors()
 Brand_Mapping = et.get_tool_brand_mapping()
@@ -180,7 +183,7 @@ for Vendor_id in vendors_to_process:
         print(f"No active items found for {Vendor_id}. Skipping.")
         continue
 
-    filtered_file = os.path.join(folder_path_filtered_data, Vendor_id + " Filtered_Data.xlsx")
+    filtered_file = os.path.join(output_filtered_folder, Vendor_id + " Filtered_Data.xlsx")
     df.to_excel(filtered_file, index=False)
     print(f"Filtered data saved: {filtered_file}")
 

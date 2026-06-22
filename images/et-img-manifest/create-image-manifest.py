@@ -22,7 +22,63 @@ if not os.path.exists(OUT_DIR):
 else:
     print(f"{OUT_DIR} already exists")
 
-   ## Connect to FTP server
+ignore_folders = ['angled-corner', 'lifestyle', 'corner','top-down']
+
+#----------------------------USER SELECTION-------------------------------------#
+print("\n" + "="*60)
+print("IMAGE MANIFEST CREATION")
+print("="*60)
+
+category_choice = input("\nWhat do you want to process?\n1. Tile\n2. Tool\n3. All\n\nEnter your choice (1, 2, or 3): ").strip()
+
+selected_tile_vendors = {}
+selected_tool_vendors = {}
+
+if category_choice == "1":
+    vendor_choice = input("\nProcess all tile vendors or one?\n1. All tile vendors\n2. One tile vendor\n\nEnter your choice (1 or 2): ").strip()
+    if vendor_choice == "2":
+        print("\nAvailable tile vendors:")
+        for ven_code in ACTIVE_TILE_VENDORS.keys():
+            print(f"  {ven_code}")
+        pick = input("\nEnter the vendor code (e.g., E0164): ").strip().upper()
+        if pick in ACTIVE_TILE_VENDORS:
+            selected_tile_vendors = {pick: ACTIVE_TILE_VENDORS[pick]}
+            print(f"\nProcessing tile vendor: {pick}")
+        else:
+            print(f"ERROR: '{pick}' not found in tile vendors. Processing all tile vendors instead.")
+            selected_tile_vendors = ACTIVE_TILE_VENDORS.copy()
+    else:
+        selected_tile_vendors = ACTIVE_TILE_VENDORS.copy()
+        print("\nProcessing all tile vendors...")
+
+elif category_choice == "2":
+    vendor_choice = input("\nProcess all tool vendors or one?\n1. All tool vendors\n2. One tool vendor\n\nEnter your choice (1 or 2): ").strip()
+    if vendor_choice == "2":
+        print("\nAvailable tool vendors:")
+        for ven_code in ACTIVE_TOOL_VENDORS.keys():
+            print(f"  {ven_code}")
+        pick = input("\nEnter the vendor code (e.g., E0991): ").strip().upper()
+        if pick in ACTIVE_TOOL_VENDORS:
+            selected_tool_vendors = {pick: ACTIVE_TOOL_VENDORS[pick]}
+            print(f"\nProcessing tool vendor: {pick}")
+        else:
+            print(f"ERROR: '{pick}' not found in tool vendors. Processing all tool vendors instead.")
+            selected_tool_vendors = ACTIVE_TOOL_VENDORS.copy()
+    else:
+        selected_tool_vendors = ACTIVE_TOOL_VENDORS.copy()
+        print("\nProcessing all tool vendors...")
+
+elif category_choice == "3":
+    selected_tile_vendors = ACTIVE_TILE_VENDORS.copy()
+    selected_tool_vendors = ACTIVE_TOOL_VENDORS.copy()
+    print("\nProcessing all vendors...")
+
+else:
+    print("Invalid choice. Processing all vendors instead.")
+    selected_tile_vendors = ACTIVE_TILE_VENDORS.copy()
+    selected_tool_vendors = ACTIVE_TOOL_VENDORS.copy()
+
+## Connect to FTP server
 ftp = et.ftp_login()
 print(f"Sucessfully logged into to ftp server")
 root = ftp.pwd()
@@ -33,65 +89,25 @@ print("Loading datafiles..")
 
 vendor_dfs = {}
 
-mpl_tile_df = et.get_tile_mpl_ftpserver(ftp)
+if selected_tile_vendors:
+    mpl_tile_df = et.get_tile_mpl_ftpserver(ftp)
+    for ven_code in selected_tile_vendors.keys():
+        mpl_df = mpl_tile_df[mpl_tile_df['VENDOR'] == ven_code].copy()
+        vendor_dfs[ven_code] = mpl_df[['E SKU', 'VENDOR ITEM CODE', 'ID', 'SERIES', 'COLOR', 'SIZE', 'FINISH', 'PRICELIST STATUS']].copy()
+        vendor_dfs[ven_code].set_index('E SKU', inplace=True)
 
-ven_codes = ACTIVE_TILE_VENDORS.keys()
-for ven_code in ven_codes:
-    #mpl_df = et.get_tile_mpl_by_vendor(ftp, ven_code)
-    mpl_df = mpl_tile_df[mpl_tile_df['VENDOR'] == ven_code].copy()
-    vendor_dfs[ven_code] = mpl_df[['E SKU', 'VENDOR ITEM CODE', 'ID', 'SERIES', 'COLOR', 'SIZE', 'FINISH', 'PRICELIST STATUS']].copy()
-    vendor_dfs[ven_code].set_index('E SKU', inplace=True)
-
-ven_codes = ACTIVE_TOOL_VENDORS.keys()
-for ven_code in ven_codes:
-    mpl_df = et.get_tool_mpl_by_vendor(ftp, ven_code)
-    vendor_dfs[ven_code] = mpl_df[['E SKU', 'VENDOR ITEM CODE', 'ID', 'SERIES', 'COLOR', 'SIZE', 'FINISH', 'PRICELIST STATUS']].copy()
-    vendor_dfs[ven_code].set_index('E SKU', inplace=True)
+if selected_tool_vendors:
+    mpl_tool_df = et.get_tool_mpl_ftpserver(ftp)
+    for ven_code in selected_tool_vendors.keys():
+        mpl_df = mpl_tool_df[mpl_tool_df['VENDOR'] == ven_code].copy()
+        vendor_dfs[ven_code] = mpl_df[['E SKU', 'VENDOR ITEM CODE', 'ID', 'SERIES', 'COLOR', 'SIZE', 'FINISH', 'PRICELIST STATUS']].copy()
+        vendor_dfs[ven_code].set_index('E SKU', inplace=True)
 
 ftp.cwd(root)
 
 prod_df = et.get_current_prod(ftp)
 prod_df = prod_df[prod_df['Top Row'].notna()].copy()
 prod_df.set_index('Variant SKU', inplace=True)
-
-ignore_folders = ['angled-corner', 'lifestyle', 'corner','top-down']  # Add folder names to ignore here
-
-#----------------------------USER SELECTION-------------------------------------#
-print("\n" + "="*60)
-print("IMAGE MANIFEST CREATION")
-print("="*60)
-
-# Get user choice
-choice = input("\nDo you want to process:\n1. All vendors\n2. One vendor\n\nEnter your choice (1 or 2): ").strip()
-
-selected_tile_vendors = ACTIVE_TILE_VENDORS.copy()
-selected_tool_vendors = ACTIVE_TOOL_VENDORS.copy()
-
-if choice == "2":
-    # Show all available vendors
-    all_vendors = list(ACTIVE_TILE_VENDORS.keys()) + list(ACTIVE_TOOL_VENDORS.keys())
-    print("\nAvailable vendors:")
-    for idx, ven_code in enumerate(all_vendors, 1):
-        vendor_type = "Tile" if ven_code in ACTIVE_TILE_VENDORS else "Tool"
-        print(f"  {idx}. {ven_code} ({vendor_type})")
-    
-    vendor_choice = input("\nEnter the vendor code (e.g., ven_code): ").strip().upper()
-    
-    # Validate and filter vendors
-    if vendor_choice in ACTIVE_TILE_VENDORS:
-        selected_tile_vendors = {vendor_choice: ACTIVE_TILE_VENDORS[vendor_choice]}
-        selected_tool_vendors = {}
-        print(f"\nProcessing tile vendor: {vendor_choice}")
-    elif vendor_choice in ACTIVE_TOOL_VENDORS:
-        selected_tool_vendors = {vendor_choice: ACTIVE_TOOL_VENDORS[vendor_choice]}
-        selected_tile_vendors = {}
-        print(f"\nProcessing tool vendor: {vendor_choice}")
-    else:
-        print(f"ERROR: Vendor '{vendor_choice}' not found. Processing all vendors instead.")
-elif choice == "1":
-    print("\nProcessing all vendors...")
-else:
-    print("Invalid choice. Processing all vendors instead.")
 
 # Create an ExcelWriter object
 full_out = pd.ExcelWriter('./out/full-manifest.xlsx', engine='xlsxwriter')
