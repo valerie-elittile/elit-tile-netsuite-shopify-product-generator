@@ -92,6 +92,9 @@
         ],
         "PINK": [
             "PINK"
+        ],
+        "OTHER":[
+            "Other"
         ]
     },
     "finishes": {
@@ -110,7 +113,8 @@
         "POLISHED": [
             "POLISH",
             "POLISHED",
-            "SEMI POLISHED"
+            "SEMI POLISHED",
+            "SEMI-POLISHED"
         ],
         "SEMI GLOSS": [
             "LOW GLOSS",
@@ -159,8 +163,8 @@
         "GRIP": [
             "GRIP"
         ],
-        "TEXTURE": [
-            "TEXTURE"
+        "TEXTURED": [
+            "TEXTURED"
         ]
     },
     "residential_applications": {
@@ -214,6 +218,11 @@
             "FIREPLACE",
             "R_FIREPLACE",
             "R-FIREPLACE"
+        ],
+        "STAIR": [
+            "STAIR",
+            "R_STAIR",
+            "R-STAIR"
         ]
     },
     "commercial_applications": {
@@ -542,6 +551,9 @@
         ],
         "SOLID": [
             "SOLID"
+        ],
+        "SHAPE": [
+            "SHAPE"
         ]
     },
     "mosaic_shapes": {
