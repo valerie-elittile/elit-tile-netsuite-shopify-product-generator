@@ -2,6 +2,9 @@
 images/et-image-import-creator/out/
 images/et-image-import-creator/temp.xlsx
 images/et-img-manifest/out/
+/tests/
+/.pytest_cache/
+netsuite/netsuite-item-creator/__pycache__/
 netsuite/netsuite-item-creator/Real Product Add Item Files/
 netsuite/netsuite-item-creator/Real Product UOM Files/
 netsuite/netsuite-item-creator/Rejected UOM Files/
