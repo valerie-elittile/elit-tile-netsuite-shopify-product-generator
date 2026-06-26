@@ -1194,6 +1194,7 @@ def process_vendor(vendor: str, df: pd.DataFrame, rejected_product_list: list, w
         'Option 2 Value': [],
         'Option 3 Name': [],
         'Option 3 Value': [],
+        'Template Suffix': [],
         'Variant Metafield: pricelist.ea_bx [number_integer]': [],
         'Variant Metafield: pricelist.sf_ea [number_decimal]': [],
         'Variant Metafield: pricelist.sf_box [number_decimal]': [],
@@ -1343,6 +1344,7 @@ def process_vendor(vendor: str, df: pd.DataFrame, rejected_product_list: list, w
     out_df['Variant Inventory Policy'] = 'deny'
     out_df['Variant Fulfillment Service'] = 'manual'
     out_df['Variant Requires Shipping'] = 'TRUE'
+    out_df['Template Suffix'] = 'customvariant-default'
 
     # Locations
     out_df['Inventory Available: Elit Tile -  North Hollywood'] = 'Stocked'
