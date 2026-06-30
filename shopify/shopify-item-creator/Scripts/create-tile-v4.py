@@ -1194,7 +1194,6 @@ def process_vendor(vendor: str, df: pd.DataFrame, rejected_product_list: list, w
         'Option 2 Value': [],
         'Option 3 Name': [],
         'Option 3 Value': [],
-        'Template Suffix': [],
         'Variant Metafield: pricelist.ea_bx [number_integer]': [],
         'Variant Metafield: pricelist.sf_ea [number_decimal]': [],
         'Variant Metafield: pricelist.sf_box [number_decimal]': [],
@@ -1326,7 +1325,7 @@ def process_vendor(vendor: str, df: pd.DataFrame, rejected_product_list: list, w
         out_data['Variant Metafield: pricelist.msrp_uom [number_decimal]'].append(df_secondary.at[e_sku, 'Variant Metafield: pricelist.msrp_uom [number_decimal]'])
   
     
-    ## Debug array length issues
+    # Debug array length issues
     # for key, array in out_data.items():
     #     print(f"{key}: Length = {len(array)}")
     
